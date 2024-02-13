@@ -159,7 +159,7 @@ function GetProperties(props) {
                 <p> <input value={searchLocation} onChange={e => setSearchLocation(e.target.value)} />
                 </p><br />
                 <h5>Search for minimum number of bedrooms required</h5>
-                <p>{searchBedrooms} <input type="range" min="1" max="55" value={searchBedrooms} onChange={e => setSearchBedrooms(e.target.value)} />
+                <p><input type="number" min="0" value={searchBedrooms} onChange={e => setSearchBedrooms(e.target.value)} />
                 </p><br />
 
 
@@ -179,7 +179,7 @@ function GetProperties(props) {
 
 
                 <h5>Search for number of bathrooms </h5>
-                <p> {searchBathrooms}<input type="range" min="1" max="47" value={searchBathrooms} onChange={e => setSearchBathrooms(e.target.value)} />
+                <p><input type="number" min="0" value={searchBathrooms} onChange={e => setSearchBathrooms(e.target.value)} />
                 </p><br />
                 
                 <div>

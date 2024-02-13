@@ -82,6 +82,7 @@ function CreateProperties() {
             name="Price"
             className="form-control"
             type="number"
+            min="1"
             value={price}
             onChange={e => setPrice(e.target.value)}
             required
@@ -106,6 +107,7 @@ function CreateProperties() {
             name="Bedrooms"
             className="form-control"
             type="number"
+            min="0"
             value={bedrooms}
             onChange={e => setBedrooms(e.target.value)}
             required
@@ -116,6 +118,7 @@ function CreateProperties() {
             name="Bathrooms"
             className="form-control"
             type="number"
+            min="0"
             value={bathrooms}
             onChange={e => setBathrooms(e.target.value)}
             required
@@ -158,8 +161,6 @@ function CreateProperties() {
                 <select onChange={e => setPropertyStatus(e.target.value)}>
 
                     <option selected value="For Sale">For Sale</option>
-                    <option value="Sold">Sold</option>
-                    <option value="Withdrawn">Withdrawn</option>
                 </select>
             </div>
         </div>
