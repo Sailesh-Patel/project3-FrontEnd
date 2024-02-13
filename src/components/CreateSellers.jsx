@@ -14,14 +14,14 @@ function CreateSellers() {
     return (<fieldset> <form className = "form" onSubmit={e => {
         e.preventDefault();
 
-        axios.get("http://localhost:8080/seller/display").then(response => {
+        axios.get("http://localhost:8082/seller/display").then(response => {
             const existingSellers = response.data;
             const exists = existingSellers.some(seller => { return seller.firstName === firstName && seller.surname === surname; });
             if (!exists) {
 
 
 
-                axios.post("http://localhost:8080/seller/create", { title, firstName, surname, tel })
+                axios.post("http://localhost:8082/seller/create", { title, firstName, surname, tel })
                     .then(response => {
                         console.log(response);
                         setTitle("");

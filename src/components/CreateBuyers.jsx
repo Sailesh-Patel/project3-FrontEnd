@@ -18,14 +18,14 @@ function CreateBuyers() {
         e => {
             e.preventDefault();
 
-            axios.get("http://localhost:8080/buyer/display").then(response => {
+            axios.get("http://localhost:8082/buyer/display").then(response => {
                 const existingBuyers = response.data;
                 const exists = existingBuyers.some(buyer => {
                     return buyer.firstName === firstName && buyer.surname === surname;
                 });
 
                 if (!exists) {
-                    axios.post("http://localhost:8080/buyer/create", {
+                    axios.post("http://localhost:8082/buyer/create", {
                         title,
                         firstName,
                         surname,

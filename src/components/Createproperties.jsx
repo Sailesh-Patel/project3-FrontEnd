@@ -22,7 +22,7 @@ function CreateProperties() {
 
     // below getproperies() added by TC
     function getProperties() {
-        axios.get("http://localhost:8080/property/display")
+        axios.get("http://localhost:8082/property/display")
             .then((response) => { setProperties(response.data) })
             .catch(console.log);
 
@@ -35,7 +35,7 @@ function CreateProperties() {
 
     return (<form className="form" onSubmit={e => {
         e.preventDefault();
-        axios.post("http://localhost:8080/property/create", { address, location, typeOfProperty, bedrooms: parseInt(bedrooms), bathrooms: parseInt(bathrooms), garden, sellerid, uploadImages, propertyStatus, price: parseInt(price) })
+        axios.post("http://localhost:8082/property/create", { address, location, typeOfProperty, bedrooms: parseInt(bedrooms), bathrooms: parseInt(bathrooms), garden, sellerid, uploadImages, propertyStatus, price: parseInt(price) })
             .then(response => {
                 console.log(response);
                 setAddress("");
@@ -82,6 +82,7 @@ function CreateProperties() {
             name="Price"
             className="form-control"
             type="number"
+            min="1"
             value={price}
             onChange={e => setPrice(e.target.value)}
             required
@@ -106,6 +107,7 @@ function CreateProperties() {
             name="Bedrooms"
             className="form-control"
             type="number"
+            min="0"
             value={bedrooms}
             onChange={e => setBedrooms(e.target.value)}
             required
@@ -116,6 +118,7 @@ function CreateProperties() {
             name="Bathrooms"
             className="form-control"
             type="number"
+            min="0"
             value={bathrooms}
             onChange={e => setBathrooms(e.target.value)}
             required
@@ -158,8 +161,6 @@ function CreateProperties() {
                 <select onChange={e => setPropertyStatus(e.target.value)}>
 
                     <option selected value="For Sale">For Sale</option>
-                    <option value="Sold">Sold</option>
-                    <option value="Withdrawn">Withdrawn</option>
                 </select>
             </div>
         </div>

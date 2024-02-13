@@ -11,7 +11,7 @@ function CreateBookings() {
   const params = useParams();
 
   useEffect(() => {
-    axios.get("http://localhost:8080/property/display/" + params.id)
+    axios.get("http://localhost:8082/property/display/" + params.id)
       .then(res => {                     
 setBookings(res.data.bookings)
       }).catch(err => console.error(err));
@@ -28,7 +28,7 @@ setBookings(res.data.bookings)
     <form className="form" onSubmit={e => {
       e.preventDefault();
 
-      axios.post("http://localhost:8080/booking/create", {
+      axios.post("http://localhost:8082/booking/create", {
         date, time, property: { id: params.id }, buyer: { id: buyer }
       })
         .then(res => { setDate(""); setTime(""); setBuyer(""); })
