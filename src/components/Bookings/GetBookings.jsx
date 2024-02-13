@@ -18,7 +18,7 @@ function GetBookings() {
             <td>{booking.time}</td>
             <td>{booking.property}</td>
             <td>{booking.buyerName}</td>
-            <td><button type="button" onClick={() => {
+            <td><button type="button" className="btn btn-danger " onClick={() => {
                         axios.delete("http://localhost:8082/booking/remove/" + booking.id)
                             .then(res => {
 

@@ -64,7 +64,7 @@ setBookings(res.data.bookings)
       <br />
       <>
         <br />
-        <button className="btn btn-danger" type="submit">Confirm Booking</button>
+        <button className="btn btn-success" type="submit">Confirm Booking</button>
       </>
     </form>)
 

@@ -58,7 +58,7 @@ function GetSeller() {
     return (
         <>
         <br />
-        <button class="btn btn-light btn-lg" onClick={handleClick}>Display all Sellers</button>
+        <button  className="btn btn-primary btn-lg " onClick={handleClick}>Display all Sellers</button>
             <br />
             <div className='container'>
                 <div className='row'>

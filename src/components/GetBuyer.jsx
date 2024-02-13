@@ -41,7 +41,7 @@ function GetBuyer() {
                             <p><b>Surname:</b> {buyer.surname}</p>
                             <p><b>Tel:</b> {buyer.tel}</p>
                            
-                            <p><button type="button" onClick={() => {
+                            <p><button type="button" className="btn btn-danger" onClick={() => {
                         axios.delete("http://localhost:8082/buyer/remove/" + buyer.id)
                             .then(res => {
 
@@ -71,7 +71,7 @@ function GetBuyer() {
     return (
         <>
         <br />
-            <button class="btn btn-light btn-lg" onClick={handleClick}>Display all Buyers</button>
+            <button className="btn btn-primary btn-lg " onClick={handleClick}>Display all Buyers</button>
             <div  className='container'>
                 <div className='row'>
                 
