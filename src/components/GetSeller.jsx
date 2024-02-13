@@ -12,7 +12,7 @@ function GetSeller() {
     function handleClick() {
 
 
-        axios.get("http://localhost:8080/seller/display")
+        axios.get("http://localhost:8082/seller/display")
             .then(response => {
                 setSellers(response.data)
                 console.log(response);

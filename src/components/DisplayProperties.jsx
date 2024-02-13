@@ -34,10 +34,10 @@ function GetProperties(props) {
     function fetchProperties() {
 
 
-        axios.get("http://localhost:8080/property/display")
+        axios.get("http://localhost:8082/property/display")
             .then(response => {
                 setProperties(response.data)
-                console.log("http://localhost:8080/property/display ", response);
+                console.log("http://localhost:8082/property/display ", response);
             })
             .catch(err => console.error(err))
 
@@ -105,7 +105,7 @@ function GetProperties(props) {
                                     e.preventDefault();
                                     console.log("property id", property.id);
 
-                                    axios.patch("http://localhost:8080/property/update/" + property.id, { propertyStatus })
+                                    axios.patch("http://localhost:8082/property/update/" + property.id, { propertyStatus })
                                         .then(response => {
                                             fetchProperties()
 
