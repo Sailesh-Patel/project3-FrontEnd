@@ -88,11 +88,28 @@ function GetProperties(props) {
 
 
                                     <p> <b>Status:</b> {property.propertyStatus}</p>
-
+                                    <div style={{display: "flex", flexDirection: "row" }}>
                                     <p><button disabled={disabledStatus} className="btn btn-success" onClick={() => navigate("/properties/bookings/" + property.id)}
 
                                     >Book a viewing</button></p>
 
+<p><button style={{marginLeft: "10px"}} type="button" className="btn btn-danger" onClick={() => {
+                        axios.delete("http://localhost:8082/property/remove/" + property.id)
+                            .then(res => {
+
+
+                                axios.get("http://localhost:8082/property/display")
+                                    .then(response => {
+                                        setProperties(response.data)
+                                        console.log(response);
+                                    })
+                                    .catch(err => console.error(err))
+                        
+                            })
+                            .catch(err => console.error(err));
+                    }}>DELETE</button></p>
+
+</div>
                                     <img src={property.uploadImages}
                                         className='Property-images'
                                         alt="propertyImage" />

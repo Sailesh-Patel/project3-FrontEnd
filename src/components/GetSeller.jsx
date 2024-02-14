@@ -42,6 +42,22 @@ function GetSeller() {
                                 <p id="first-name"><b>First Name:</b> {seller.firstName}</p>
                                 <p><b>Surname:</b> {seller.surname}</p>
                                 <p><b>Tel:</b> {seller.tel}</p>
+
+                                <p><button type="button" className="btn btn-danger" onClick={() => {
+                        axios.delete("http://localhost:8082/seller/remove/" + seller.id)
+                            .then(res => {
+
+
+                                axios.get("http://localhost:8082/seller/display")
+                                    .then(response => {
+                                        setSellers(response.data)
+                                        console.log(response);
+                                    })
+                                    .catch(err => console.error(err))
+                        
+                            })
+                            .catch(err => console.error(err));
+                    }}>DELETE</button></p>
                                 
 
                             </div>
