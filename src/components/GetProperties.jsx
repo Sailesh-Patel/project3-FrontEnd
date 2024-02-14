@@ -89,7 +89,7 @@ function GetProperties(props) {
 
                                     <p> <b>Status:</b> {property.propertyStatus}</p>
 
-                                    <p><button disabled={disabledStatus} onClick={() => navigate("/properties/bookings/" + property.id)}
+                                    <p><button disabled={disabledStatus} className="btn btn-success" onClick={() => navigate("/properties/bookings/" + property.id)}
 
                                     >Book a viewing</button></p>
 

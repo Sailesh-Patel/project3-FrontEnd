@@ -89,7 +89,7 @@ function GetProperties(props) {
 
                                     <p> <b>Status:</b> {property.propertyStatus}</p>
 
-                                    <p><button disabled={disabledStatus} onClick={() => navigate("/properties/bookings/" + property.id)}
+                                    <p><button disabled={disabledStatus} className="btn btn-success" onClick={() => navigate("/properties/bookings/" + property.id)}
 
                                     >Book a viewing</button></p>
 
@@ -118,14 +118,14 @@ function GetProperties(props) {
 
                                 }}>
 
-                                    <select style={{ width: "100px", display: "inline", margin: "5px" }} onChange={(e) => setPropertyStatus(e.target.value)} required>
+                                    <select className="form-select" style={{ width: "100px", display: "inline", margin: "5px"}} onChange={(e) => setPropertyStatus(e.target.value)} required>
                                         <option value="">Select</option>
                                         <option value="For Sale" >For Sale</option>
                                         <option value="Sold" >Sold</option>
                                         <option value="Withdrawn" >Withdraw</option>
 
                                     </select>
-                                    <button type="submit">Change Status</button>
+                                    <button className="btn btn-primary" type="submit">Change Status</button>
                                 </form>
 
 
