@@ -39,7 +39,7 @@ function GetSeller() {
                             <div className='card-text'>
 
                                 <p className='card-title '><b>Title:</b> {seller.title}</p>
-                                <p><b>First Name:</b> {seller.firstName}</p>
+                                <p id="first-name"><b>First Name:</b> {seller.firstName}</p>
                                 <p><b>Surname:</b> {seller.surname}</p>
                                 <p><b>Tel:</b> {seller.tel}</p>
                                 
