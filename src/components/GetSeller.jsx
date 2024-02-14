@@ -34,14 +34,30 @@ function GetSeller() {
             
                 <div className='col-4'>
                     <div className='card'>
-                        <div className='card-body'>
+                        <div id="cardBody" className='card-body'>
 
-                            <div className='card-text'>
+                            <div id="cardText" className='card-text'>
 
-                                <p className='card-title '><b>Title:</b> {seller.title}</p>
+                                <p id="title" className='card-title '><b>Title:</b> {seller.title}</p>
                                 <p id="first-name"><b>First Name:</b> {seller.firstName}</p>
-                                <p><b>Surname:</b> {seller.surname}</p>
-                                <p><b>Tel:</b> {seller.tel}</p>
+                                <p id="surname"><b>Surname:</b> {seller.surname}</p>
+                                <p id="tel"><b>Tel:</b> {seller.tel}</p>
+
+                                <p><button type="button" className="btn btn-danger" onClick={() => {
+                        axios.delete("http://localhost:8082/seller/remove/" + seller.id)
+                            .then(res => {
+
+
+                                axios.get("http://localhost:8082/seller/display")
+                                    .then(response => {
+                                        setSellers(response.data)
+                                        console.log(response);
+                                    })
+                                    .catch(err => console.error(err))
+                        
+                            })
+                            .catch(err => console.error(err));
+                    }}>DELETE</button></p>
                                 
 
                             </div>
