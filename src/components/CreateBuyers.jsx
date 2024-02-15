@@ -1,6 +1,7 @@
 
 import axios from "axios";
 import { useState, useEffect } from "react";
+import GetSeller from "./GetSeller";
 
 
 function CreateBuyers() {
