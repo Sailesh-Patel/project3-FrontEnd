@@ -49,11 +49,12 @@ function CreateProperties() {
                 setPropertyStatus("For Sale");
                 setPrice("");
 
+                getProperties();
 
 
             })
             .catch(err => console.error(err))
-        window.location.reload();
+ 
     }}>
         <label htmlFor="propertyAddress" className="form-label">Address</label>
         <input
